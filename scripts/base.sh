@@ -24,7 +24,7 @@ sudo apt-get update
 sudo apt-get install -qq curl unzip git-core ack-grep software-properties-common
 
 # Git Config and set Owner
-curl --silent -L $github_url/helpers/gitconfig > /home/vagrant/.gitconfig
+cat $github_url/helpers/gitconfig > /home/vagrant/.gitconfig
 sudo chown vagrant:vagrant /home/vagrant/.gitconfig
 
 # Common fixes for git
@@ -83,7 +83,8 @@ if [[ ! -z $2 && ! $2 =~ false && $2 =~ ^[0-9]*$ ]]; then
     # Add some swap settings:
     # vm.swappiness=10: Means that there wont be a Swap file until memory hits 90% useage
     # vm.vfs_cache_pressure=50: read http://rudd-o.com/linux-and-free-software/tales-from-responsivenessland-why-linux-feels-slow-and-how-to-fix-that
-    printf "vm.swappiness=10\nvm.vfs_cache_pressure=50" | tee -a /etc/sysctl.conf && sysctl -p
+    echo "vm.swappiness=10" | tee -a /etc/sysctl.conf && sysctl -p
+    echo "vm.vfs_cache_pressure=50" | tee -a /etc/sysctl.conf && sysctl -p
 
 fi
 
