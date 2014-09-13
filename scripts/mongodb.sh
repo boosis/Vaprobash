@@ -36,7 +36,7 @@ if [ $PHP_IS_INSTALLED -eq 0 ]; then
     # add extencion file and restart service
     echo 'extension=mongo.so' | sudo tee /etc/php5/mods-available/mongo.ini
 
-    ln -s /etc/php5/mods-available/mongo.ini /etc/php5/fpm/conf.d/mongo.ini
-    ln -s /etc/php5/mods-available/mongo.ini /etc/php5/cli/conf.d/mongo.ini
+    ln -s /etc/php5/mods-available/mongo.ini /etc/php5/fpm/conf.d/20-mongo.ini
+    ln -s /etc/php5/mods-available/mongo.ini /etc/php5/cli/conf.d/20-mongo.ini
     sudo service php5-fpm restart
 fi
