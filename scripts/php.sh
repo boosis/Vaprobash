@@ -81,8 +81,8 @@ EOF
     sudo sed -i "s/;date.timezone =.*/date.timezone = ${PHP_TIMEZONE/\//\\/}/" /etc/php5/cli/php.ini
     
     # PHP New Session Dir
-    sudo sed -i "s/;session.save_path =.*/session.save_path=/var/lib/php5/sessions" /etc/php5/fpm/php.ini
-    sudo sed -i "s/;session.save_path =.*/session.save_path=/var/lib/php5/sessions" /etc/php5/cli/php.ini
+    #sudo sed -i "s/;session.save_path =.*/session.save_path=/var/lib/php5/sessions" /etc/php5/fpm/php.ini
+    #sudo sed -i "s/;session.save_path =.*/session.save_path=/var/lib/php5/sessions" /etc/php5/cli/php.ini
 
     sudo service php5-fpm restart
 fi
