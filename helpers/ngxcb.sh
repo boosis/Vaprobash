@@ -46,7 +46,7 @@ read -d '' PHP_NO_SSL <<EOF
         # pass the PHP scripts to php5-fpm
         # Note: \.php$ is susceptible to file upload attacks
         # Consider using: "location ~ ^/(index|app|app_dev|config)\.php(/|$) {"
-        location ~ \.php$ {
+        location ~ ^/(index|app|app_dev|config)\.php(/|$) {
             try_files \$uri =404;
             fastcgi_split_path_info ^(.+\.php)(/.+)$;
             # With php5-fpm:
@@ -64,7 +64,7 @@ read -d '' PHP_WITH_SSL <<EOF
         # pass the PHP scripts to php5-fpm
         # Note: \.php$ is susceptible to file upload attacks
         # Consider using: "location ~ ^/(index|app|app_dev|config)\.php(/|$) {"
-        location ~ \.php$ {
+        location ~ ^/(index|app|app_dev|config)\.php(/|$) {
             try_files \$uri =404;
             fastcgi_split_path_info ^(.+\.php)(/.+)$;
             # With php5-fpm:
