@@ -24,7 +24,7 @@ sudo debconf-set-selections <<< "mysql-server mysql-server/root_password_again p
 
 # Install MySQL Server
 # -qq implies -y --force-yes
-sudo apt-get install -qq $mysql_package
+sudo apt-get install -y $mysql_package
 
 # Make MySQL connectable from outside world without SSH tunnel
 if [ $3 == "true" ]; then

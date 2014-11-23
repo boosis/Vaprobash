@@ -18,7 +18,7 @@ if [[ $HHVM == "true" ]]; then
 
     # Install HHVM
     # -qq implies -y --force-yes
-    sudo apt-get install -qq hhvm
+    sudo apt-get install -y hhvm
 
     # Start on system boot
     sudo update-rc.d hhvm defaults
@@ -38,7 +38,7 @@ else
 
     # Install PHP
     # -qq implies -y --force-yes
-    sudo apt-get install -qq php5-cli php5-fpm php5-mysql php5-pgsql php5-sqlite php5-curl php5-gd php5-gmp php5-mcrypt php5-memcached php5-imagick php5-intl php5-xdebug php5-dev php5-redis
+    sudo apt-get install -y php5-cli php5-fpm php5-mysql php5-pgsql php5-sqlite php5-curl php5-gd php5-gmp php5-mcrypt php5-memcached php5-imagick php5-intl php5-xdebug php5-dev php5-redis
 
     # Set PHP FPM to listen on TCP instead of Socket
     sudo sed -i "s/listen =.*/listen = 127.0.0.1:9000/" /etc/php5/fpm/pool.d/www.conf

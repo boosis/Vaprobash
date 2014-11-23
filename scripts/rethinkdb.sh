@@ -10,4 +10,4 @@ sudo apt-get update
 
 # Install
 # -qq implies -y --force-yes
-sudo apt-get install -qq rethinkdb
+sudo apt-get install -y rethinkdb

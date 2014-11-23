@@ -21,7 +21,7 @@ sudo apt-get update
 
 # Install PostgreSQL
 # -qq implies -y --force-yes
-sudo apt-get install -qq postgresql postgresql-contrib
+sudo apt-get install -y postgresql postgresql-contrib
 
 
 # Configure PostgreSQL

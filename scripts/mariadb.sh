@@ -23,7 +23,7 @@ sudo debconf-set-selections <<< "maria-db-$MARIADB_VERSION mysql-server/root_pas
 
 # Install MariaDB
 # -qq implies -y --force-yes
-sudo apt-get install -qq mariadb-server
+sudo apt-get install -y mariadb-server
 
 # Make Maria connectable from outside world without SSH tunnel
 if [ $2 == "true" ]; then

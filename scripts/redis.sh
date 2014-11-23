@@ -7,7 +7,7 @@ sudo apt-add-repository ppa:rwky/redis -y
 
 # Install Redis
 # -qq implies -y --force-yes
-sudo apt-get install -qq redis-server
+sudo apt-get install -y redis-server
 
 # Redis Configuration
 sudo mkdir -p /etc/redis/conf.d
@@ -37,3 +37,20 @@ if [ ! -z "$1" ]; then
 fi # arg check
 
 sudo service redis-server restart
+
+php -v > /dev/null 2>&1
+PHP_IS_INSTALLED=$?
+#
+#if [ $PHP_IS_INSTALLED -eq 0 ]; then
+#    # install php extencion
+#    echo "" > answers.txt
+#    sudo pecl install redis < answers.txt
+#    rm answers.txt
+#
+#    # add extencion file and restart service
+#    echo 'extension=redis.so' | sudo tee /etc/php5/mods-available/redis.ini
+#
+#    ln -s /etc/php5/mods-available/redis.ini /etc/php5/fpm/conf.d/20-mongo.ini
+#    ln -s /etc/php5/mods-available/redis.ini /etc/php5/cli/conf.d/20-mongo.ini
+#    sudo service php5-fpm restart
+#fi

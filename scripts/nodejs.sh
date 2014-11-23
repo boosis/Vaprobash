@@ -31,7 +31,7 @@ if [[ $NODE_IS_INSTALLED -ne 0 ]]; then
     echo ">>> Installing node & npm"
     sudo add-apt-repository -y ppa:chris-lea/node.js
     sudo apt-get update
-    sudo apt-get -qq install nodejs
+    sudo apt-get -y install nodejs
 fi
 
 # Install (optional) Global Node Packages
